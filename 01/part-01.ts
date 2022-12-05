@@ -5,10 +5,12 @@ type Elf = {
   calories: number[];
 };
 
+/*---simple function return sum of an array---*/
 export function sum(input: number[]) {
   return input.reduce((acc, curr) => acc + curr, 0);
 }
 
+/*---parse input i've got from advent of code---*/
 function parseInput() {
   const values = fs.readFileSync("01/input.txt").toString().split(/\r?\n/);
   return values;
