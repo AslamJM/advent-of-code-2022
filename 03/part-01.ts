@@ -1,9 +1,11 @@
 import fs from "fs";
 
-const itemTypes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+export const itemTypes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function parseInput() {
   const items = fs.readFileSync("03/input.txt").toString().split(/\r?\n/);
+
+  //split the string in half
   const splittedItems = items.map((item) => {
     return [
       item.slice(0, item.length / 2),
@@ -14,13 +16,21 @@ function parseInput() {
 }
 
 function findItemInBoth(sack: string[]) {
-  let commonItems: string[] = [];
   for (let i = 0; i < sack[0].length; i++) {
-    if (sack[0][i] === sack[1][i]) {
-      commonItems.push(sack[0][i]);
+    for (let j = 0; j < sack[0].length; j++) {
+      if (sack[0][i] === sack[1][j]) {
+        //return the priority
+        return itemTypes.indexOf(sack[0][i]) + 1;
+      }
     }
   }
-  return commonItems;
+  return 0;
 }
 
-console.log(findItemInBoth(["jqHRNqRjqzjGDLGL", "rsFMfFZSrLrFZsSL"]));
+export function findPrioritySum() {
+  const itemsArray = parseInput();
+  const prioritySum = itemsArray.reduce((acc, curr) => {
+    return acc + findItemInBoth(curr);
+  }, 0);
+  return prioritySum;
+}
