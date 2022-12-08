@@ -11,4 +11,5 @@ npx ts-node 01/main.ts
 challenge 01 - [Day 1: Calorie Counting](https://adventofcode.com/2022/day/1)    
 challenge 02 - [Day 2: Rock Paper Scissors](https://adventofcode.com/2022/day/2)   
 challenge 03 - [Day 3: Rucksack Reorganization](https://adventofcode.com/2022/day/3)  
-challenge 04 - ["Day 4: Camp Cleanup"](https://adventofcode.com/2022/day/4)
+challenge 04 - ["Day 4: Camp Cleanup"](https://adventofcode.com/2022/day/4)  
+challenge 05 - [Day 5: Supply Stacks](https://adventofcode.com/2022/day/5)
